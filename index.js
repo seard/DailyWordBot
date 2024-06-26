@@ -23,8 +23,17 @@ async function SendTodaysPost() {
   bot.sendMessage(options.channel, response, {
     parse_mode : "HTML",
     disable_web_page_preview: true
+  }).finally(() => {
+    console.log("Done posting!");
+
+    // Exit
+    bot.stopPolling();
+    process.exit(0);
+  }).catch((err) => {
+    console.log('Something went wrong...');
+    console.log(err);
   });
-  console.log("Done posting!");
 }
 
 SendTodaysPost();
+
