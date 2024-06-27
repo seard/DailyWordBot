@@ -15,7 +15,7 @@ async function SendTodaysPost() {
 
   console.log("Parsing verses...");
   const todaysPostData = await readTodaysPostFromJson(options.verseDataFilePath);
-  console.log("Done parsing!", todaysPostData);
+  console.log("Done parsing!");
 
   console.log("Posting...");
   console.log(todaysPostData);

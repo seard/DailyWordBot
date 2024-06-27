@@ -5,7 +5,7 @@ Run this script to convert the Excel file to JSON
 const readXlsxFile = require('read-excel-file/node')
 var fs = require('fs');
 
-readXlsxFile('verse-data.xlsx').then((rows) => {
+readXlsxFile('scripts/e2j/verse-data.xlsx').then((rows) => {
   const row = rows[0];
 
   let newJson = [];
@@ -15,12 +15,15 @@ readXlsxFile('verse-data.xlsx').then((rows) => {
 
     newJson.push({
       postNumber: row[0],
-      verses: row[1].split(";").map(verse => verse.trim().replace(/\./g, "")),
+      verses: row[1].split(';').map(verse => verse.trim().replace(/\./g, '')),
       date: new Date(row[2]),
-      books: row[3].split(";"),
-      references: row.slice(4).filter(ref => ref != null)
+      books: row[3].split(';'),
+      references: row.slice(4).filter(ref => ref != null).map(ref => {
+        const [title, link] = ref.split(';');
+        return { title: title, link: link };
+      })
     });
   });
 
-  fs.writeFile('verse-data.json', JSON.stringify(newJson), 'utf8', () => { console.log("Done!"); });
+  fs.writeFile('scripts/e2j/verse-data.json', JSON.stringify(newJson), 'utf8', () => { console.log('Done!'); });
 })
