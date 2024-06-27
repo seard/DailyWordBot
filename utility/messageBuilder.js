@@ -12,8 +12,8 @@ function buildTodaysVerse(todaysPostData) {
 ${todaysPostData.references.map(reference => `<a href="${reference.link}">${reference.title}</a>`).join('\n')}
 
 <b>FAQ:</b>
-<a href="https://t.me/the_dailyword/2">Start</a>  <a href="https://t.me/the_dailyword/3">Bible Resources</a>
-<a href="https://t.me/the_dailyword/20">Schedule</a>  <a href="https://t.me/the_dailyword/10">Navigation</a>
+<a href="https://t.me/the_dailyword/2">Start</a>              <a href="https://t.me/the_dailyword/3">Bible Resources</a>
+<a href="https://t.me/the_dailyword/20">Schedule</a>      <a href="https://t.me/the_dailyword/10">Navigation</a>
 
 ${todaysPostData.postNumber}/365`;
 }
