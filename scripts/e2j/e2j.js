@@ -15,7 +15,7 @@ readXlsxFile('scripts/e2j/verse-data.xlsx').then((rows) => {
 
     newJson.push({
       postNumber: row[0],
-      verses: row[1].split(';').map(verse => verse.trim().replace(/\./g, '')),
+      verses: row[1].split('\n').map(verse => verse.trim().replace(/\./g, '')),
       date: new Date(row[2]),
       books: row[3].split(';'),
       references: row.slice(4).filter(ref => ref != null).map(ref => {

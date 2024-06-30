@@ -1,5 +1,5 @@
 const TelegramBot = require('node-telegram-bot-api');
-const { buildTodaysVerse } = require('./utility/messageBuilder');
+const { buildTodaysVerse } = require('../../utility/messageBuilder');
 const fs = require('fs').promises;
 
 const options = {
