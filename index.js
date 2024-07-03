@@ -6,7 +6,8 @@ const { buildTodaysVerse } = require('./utility/messageBuilder');
 
 const options = {
   token: '7239427960:AAFVOZ92G8SB7TRaPTM5Shs-Gy0lEOQoW7c',
-  channel: '@biblestudyexample',
+  //channel: '@biblestudyexample', // DEV
+  channel: '@the_dailyword', // PROD
   verseDataFilePath: 'scripts/e2j/verse-data.json',
 };
 

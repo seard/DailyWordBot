@@ -4,7 +4,7 @@ const fs = require('fs').promises;
 
 const options = {
   token: '7239427960:AAFVOZ92G8SB7TRaPTM5Shs-Gy0lEOQoW7c',
-  channel: '@biblestudyexample',
+  channel: '@biblestudyexample', // DEV
   verseDataFilePath: 'scripts/e2j/verse-data.json',
 };
 
